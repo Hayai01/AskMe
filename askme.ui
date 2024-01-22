@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Askme</class>
+ <widget class="QMainWindow" name="Askme">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Askme</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>&amp;Archivo</string>
+    </property>
+    <widget class="QMenu" name="menuApuntes_2">
+     <property name="title">
+      <string>&amp;Apuntes</string>
+     </property>
+     <addaction name="actionNuevo"/>
+     <addaction name="actionLista"/>
+    </widget>
+    <widget class="QMenu" name="menuPreguntas">
+     <property name="title">
+      <string>&amp;Preguntas</string>
+     </property>
+     <addaction name="actionGenerar"/>
+    </widget>
+    <addaction name="menuApuntes_2"/>
+    <addaction name="menuPreguntas"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuAcerca_de">
+    <property name="title">
+     <string>A&amp;cerca de</string>
+    </property>
+    <addaction name="actionCreditos"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuAcerca_de"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>&amp;Nuevo</string>
+   </property>
+   <property name="toolTip">
+    <string>Crear un nuevo apunte</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionLista">
+   <property name="text">
+    <string>&amp;Lista</string>
+   </property>
+   <property name="toolTip">
+    <string>Lista de apuntes</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionGenerar">
+   <property name="text">
+    <string>&amp;Generar</string>
+   </property>
+   <property name="toolTip">
+    <string>Generar nuevas preguntas</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionCreditos">
+   <property name="text">
+    <string>&amp;Créditos</string>
+   </property>
+   <property name="toolTip">
+    <string>Autores de la aplicación</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>&amp;Salir</string>
+   </property>
+   <property name="toolTip">
+    <string>Salir de a aplicaci{on</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
