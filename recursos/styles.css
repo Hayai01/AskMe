@@ -1,0 +1,52 @@
+
+/* style.css */
+
+/* Reset de márgenes y relleno para asegurar consistencia en todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo de la aplicación */
+body {
+    background-color: #f0f0f0; /* Gris claro de fondo */
+    color: #333; /* Color de texto principal */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%; /* Ancho del contenedor principal */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+/* Estilo para títulos */
+h1, h2, h3 {
+    color: #555; /* Color de texto más oscuro para títulos */
+}
+
+/* Estilo para enlaces */
+a {
+    color: #007bff; /* Color de enlace principal */
+    text-decoration: none; /* Sin subrayado por defecto */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilo para botones */
+button {
+    background-color: #007bff; /* Color de fondo de botón principal */
+    color: #fff; /* Color de texto en botón principal */
+    padding: 10px 20px; /* Relleno interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+}
+
+button:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el ratón */
+}
+

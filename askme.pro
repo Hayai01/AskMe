@@ -51,3 +51,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     README.md \
     diagrama.qmodel
+
+RESOURCES += \
+    Recursos.qrc

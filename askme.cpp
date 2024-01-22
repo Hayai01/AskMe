@@ -10,11 +10,25 @@ Askme::Askme(QWidget *parent)
 {
     ui->setupUi(this);
     cargarDatos();
+    cargarEstilos();
 }
 
 Askme::~Askme()
 {
     delete ui;
+}
+
+void Askme::cargarEstilos()
+{
+    // Cargar el contenido del archivo CSS
+    QFile styleFile(":/Img/recursos/styles.css");  // Reemplaza con la ruta correcta si es necesario
+    styleFile.open(QFile::ReadOnly | QFile::Text);
+    QTextStream styleStream(&styleFile);
+    QString style = styleStream.readAll();
+    styleFile.close();
+
+    // Aplicar los estilos a la aplicación
+    qApp->setStyleSheet(style);
 }
 
 void Askme::on_apunteTomado(Apunte *apunte)

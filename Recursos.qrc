@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/Img">
+        <file>recursos/David.jpeg</file>
+        <file>recursos/Joseph.jpeg</file>
+        <file>recursos/mayerly.jpeg</file>
+        <file>recursos/Ariel.jpeg</file>
+        <file>recursos/Fabian.jpeg</file>
+        <file>recursos/Luis.jpeg</file>
+        <file>recursos/Mateo.jpeg</file>
+        <file>recursos/Rodrigo.jpeg</file>
+        <file>recursos/styles.css</file>
+    </qresource>
+</RCC>

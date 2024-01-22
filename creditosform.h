@@ -2,6 +2,10 @@
 #define CREDITOSFORM_H
 
 #include <QWidget>
+#include <QLabel>
+#include <QGridLayout>
+#include <QDesktopServices>
+#include <QUrl>
 
 namespace Ui {
 class CreditosForm;

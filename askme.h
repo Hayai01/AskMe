@@ -67,5 +67,6 @@ private:
     QComboBox *comboAsignaturas;
     QComboBox *comboTemas;
     void actualizarTablaApuntes(QDialog *dialogo, int indexAsignatura, int indexTema);
+    void cargarEstilos();
 };
 #endif // ASKME_H
