@@ -245,3 +245,11 @@ void Askme::on_actionLista_triggered()
 }
 
 
+
+void Askme::on_actionCreditos_triggered()
+{
+    CreditosForm *c = new CreditosForm(this);
+
+    cargarSubVentana(c);
+}
+

@@ -12,6 +12,7 @@ SOURCES += \
     apunte.cpp \
     apunteform.cpp \
     asignatura.cpp \
+    creditosform.cpp \
     cuestionario.cpp \
     cuestionarioform.cpp \
     main.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     apunteform.h \
     asignatura.h \
     askme.h \
+    creditosform.h \
     cuestionario.h \
     cuestionarioform.h \
     pregunta.h \
@@ -36,6 +38,7 @@ HEADERS += \
 FORMS += \
     apunteform.ui \
     askme.ui \
+    creditosform.ui \
     cuestionarioform.ui \
     preguntaform.ui \
     resultadosform.ui

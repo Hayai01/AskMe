@@ -21,9 +21,7 @@
 #include "apunteform.h"
 #include "cuestionarioform.h"
 #include "preguntaform.h"
-#include "listaform.h"
-
-
+#include "creditosform.h"
 
 
 #include "asignatura.h"
@@ -51,6 +49,8 @@ private slots:
     void on_actionNuevo_triggered();
     void on_actionLista_triggered();
     void on_actionGenerar_triggered();
+
+    void on_actionCreditos_triggered();
 
 private:
     Ui::Askme *ui;
