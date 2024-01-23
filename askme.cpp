@@ -217,6 +217,7 @@ void Askme::mostrarListaApuntes()
     }
 
     // Conectar la señal de cambio de asignatura
+
     connect(comboAsignaturas, QOverload<int>::of(&QComboBox::currentIndexChanged),
             [=](int index) {
                 comboTemas->clear();
@@ -233,7 +234,7 @@ void Askme::mostrarListaApuntes()
                 // Actualizar la tabla de apuntes al cambiar el tema
                 actualizarTablaApuntes(dialogo, comboAsignaturas->currentIndex(), index);
                 // Ajustar el tamaño de la ventana al tamaño de la tabla
-                dialogo->adjustSize();
+                dialogo->parentWidget()->adjustSize();
             });
 
     // Agregar combos al layout
@@ -254,6 +255,9 @@ void Askme::mostrarListaApuntes()
 
     // Agregar el layout al diálogo
     dialogo->setLayout(layout);
+
+    actualizarTablaApuntes(dialogo, 0, 0);
+
 
     // Mostrar el diálogo modal
     dialogo->exec();
