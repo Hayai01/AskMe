@@ -10,7 +10,49 @@ Askme::Askme(QWidget *parent)
 {
     ui->setupUi(this);
     cargarDatos();
-    cargarEstilos();
+
+
+    // Aplicar un estilo general a la ventana principal
+    this->setStyleSheet(
+        "background-color: #333333; /* Fondo gris oscuro */"
+        "color: #F2F1EB; /* Color de texto claro */"
+        "font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+        "font-size: 14px; /* Tamaño de letra */"
+        "border-radius: 15px; /* Bordes muy redondeados */"
+        );
+
+    // Establecer bordes redondos y fondo para todos los QPushButton
+    QString elementStyle =
+        "QComboBox, QLineEdit, QTextEdit, QTableWidget, QStringList {"
+        "   background-color: #F2F1EB; /* Color claro para QComboBox y QLineEdit */"
+        "   color: #333333; /* Color de texto oscuro */"
+        "   border: 2px solid #666666; /* Borde sólido */"
+        "   border-radius: 8px; /* Bordes redondeados */"
+        "   padding: 5px; /* Relleno interno */"
+        "}"
+        "QPushButton {"
+        "   background-color: #333333; /* Color de fondo de botón principal */"
+        "   color: #F2F1EB; /* Color de texto en botón principal */"
+        "   padding: 10px 20px; /* Relleno interno */"
+        "   border: 2px solid #666666; /* Borde sólido */"
+        "   border-radius: 15px; /* Bordes muy redondeados */"
+        "   cursor: pointer; /* Cambiar el cursor al pasar el ratón */"
+        "   transition: background-color 0.3s, color 0.3s; /* Transición suave */"
+        "   font-size: 14px; /* Tamaño de letra */"
+        "   font-weight: bold; /* Texto en negrita */"
+        "}"
+        "QPushButton:hover {"
+        "   background-color: #444444; /* Cambio de color al pasar el ratón */"
+        "}"
+       "QHeaderView::section {"
+            "background-color: #333333; /* Color de fondo para los índices */"
+        "   color: #F2F1EB; /* Color del texto para los índices */"
+             "}";
+
+
+
+    // Aplicar el estilo a los elementos específicos
+    qApp->setStyleSheet(elementStyle);
 }
 
 Askme::~Askme()
@@ -18,18 +60,7 @@ Askme::~Askme()
     delete ui;
 }
 
-void Askme::cargarEstilos()
-{
-    // Cargar el contenido del archivo CSS
-    QFile styleFile(":/Img/recursos/styles.css");  // Reemplaza con la ruta correcta si es necesario
-    styleFile.open(QFile::ReadOnly | QFile::Text);
-    QTextStream styleStream(&styleFile);
-    QString style = styleStream.readAll();
-    styleFile.close();
 
-    // Aplicar los estilos a la aplicación
-    qApp->setStyleSheet(style);
-}
 
 void Askme::on_apunteTomado(Apunte *apunte)
 {
@@ -144,6 +175,9 @@ void Askme::mostrarListaApuntes()
     QDialog *dialogo = new QDialog(this);
     dialogo->setWindowTitle("Lista de Apuntes");
 
+    // Establecer un ancho mínimo más grande para el diálogo
+    dialogo->setMinimumWidth(1000);  // Ajusta este valor según tus necesidades
+
     // Crear un layout vertical
     QVBoxLayout *layout = new QVBoxLayout(dialogo);
 
@@ -173,6 +207,8 @@ void Askme::mostrarListaApuntes()
             [=](int index) {
                 // Actualizar la tabla de apuntes al cambiar el tema
                 actualizarTablaApuntes(dialogo, comboAsignaturas->currentIndex(), index);
+                // Ajustar el tamaño de la ventana al tamaño de la tabla
+                dialogo->adjustSize();
             });
 
     // Agregar combos al layout
@@ -198,6 +234,7 @@ void Askme::mostrarListaApuntes()
     dialogo->exec();
 }
 
+
 void Askme::actualizarTablaApuntes(QDialog *dialogo, int indexAsignatura, int indexTema)
 {
     // Obtener la asignatura y el tema seleccionados
@@ -221,8 +258,13 @@ void Askme::actualizarTablaApuntes(QDialog *dialogo, int indexAsignatura, int in
             ++row;
         }
     }
+
     // Ajustar el tamaño de la columna automáticamente
     tablaApuntes->resizeColumnsToContents();
+
+    // Ajustar el tamaño de la ventana al tamaño de la tabla
+   dialogo->resize(dialogo->sizeHint());
+
 }
 
 
