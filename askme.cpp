@@ -36,8 +36,6 @@ Askme::Askme(QWidget *parent)
         "   padding: 10px 20px; /* Relleno interno */"
         "   border: 2px solid #666666; /* Borde sólido */"
         "   border-radius: 15px; /* Bordes muy redondeados */"
-        "   cursor: pointer; /* Cambiar el cursor al pasar el ratón */"
-        "   transition: background-color 0.3s, color 0.3s; /* Transición suave */"
         "   font-size: 14px; /* Tamaño de letra */"
         "   font-weight: bold; /* Texto en negrita */"
         "}"

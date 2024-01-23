@@ -13,18 +13,31 @@ Cuestionario::Cuestionario(Tema *tema) : m_tema(tema), m_mostradas(0)
     }
 }
 
-Pregunta *Cuestionario::siguiente()
+
+Pregunta* Cuestionario::siguiente()
 {
-    // TODO: Lanzar preguntas al azar
-    foreach(Pregunta *p, m_preguntas){
-        if(!p->respondida()){
-            m_mostradas++;
-            return p;
+    // Crear una lista de preguntas no respondidas
+    QList<Pregunta*> preguntasNoRespondidas;
+    foreach (Pregunta* p, m_preguntas) {
+        if (!p->respondida()) {
+            preguntasNoRespondidas.append(p);
         }
     }
+
+    // Mezclar la lista de preguntas
+    std::random_device rd;
+    std::default_random_engine rng(rd());
+    std::shuffle(preguntasNoRespondidas.begin(), preguntasNoRespondidas.end(), rng);
+
+    // Seleccionar la siguiente pregunta de la lista
+    foreach (Pregunta* p, preguntasNoRespondidas) {
+        m_mostradas++;
+        return p;
+    }
+
+    // Si no hay preguntas no respondidas, devuelve nullptr
     return nullptr;
 }
-
 void Cuestionario::terminar()
 {
     int correctas = 0;

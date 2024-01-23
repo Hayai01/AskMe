@@ -1,6 +1,8 @@
 #ifndef CUESTIONARIO_H
 #define CUESTIONARIO_H
 
+#include <algorithm>  // Para std::shuffle
+#include <random>
 #include <tema.h>
 #include <pregunta.h>
 
